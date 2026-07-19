@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #0e1621;
+  color: #ffffff;
+  font-family: Inter, system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Thin Quotex-style scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #222c3c;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2c3950;
+}
+
+/* Hide number input spinners */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@layer components {
+  .qx-input {
+    @apply w-full rounded-lg bg-qx-input border border-qx-border px-3 py-2.5 text-sm text-white
+           placeholder:text-qx-textMute outline-none transition focus:border-qx-green;
+  }
+  .qx-btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold
+           transition active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .qx-btn-green {
+    @apply qx-btn bg-qx-green text-white hover:bg-qx-greenHover;
+  }
+  .qx-btn-ghost {
+    @apply qx-btn bg-qx-panel2 text-white hover:bg-qx-border;
+  }
+  .qx-card {
+    @apply rounded-2xl bg-qx-panel border border-qx-border shadow-panel;
+  }
+  .qx-label {
+    @apply block text-xs font-medium text-qx-textDim mb-1.5;
+  }
+}

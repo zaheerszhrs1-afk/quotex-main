@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+build
+.env.local
+.env
+public/sw.js
+public/workbox-*.js
+public/worker-*.js
+public/sw.js.map
+public/workbox-*.js.map
+public/uploads/*
+!public/uploads/.gitkeep
+.DS_Store
+*.log
+.mongo-data
+.claude/settings.local.json

@@ -1,0 +1,43 @@
+{
+  "name": "quotex-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quotex UI clone for local testing & learning (simulated, no real money)",
+  "scripts": {
+    "dev": "concurrently -n NEXT,WS -c cyan,magenta \"next dev\" \"node server/index.js\"",
+    "dev:mem": "concurrently -n DB,NEXT,WS -c yellow,cyan,magenta \"node scripts/memdb.js\" \"wait-on tcp:27017 && next dev\" \"wait-on tcp:27017 && node server/index.js\"",
+    "memdb": "node scripts/memdb.js",
+    "next": "next dev",
+    "server": "node server/index.js",
+    "build": "next build",
+    "start": "concurrently -n NEXT,WS -c cyan,magenta \"next start\" \"node server/index.js\"",
+    "seed": "node scripts/seed.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "lightweight-charts": "^4.1.3",
+    "mongoose": "^8.4.1",
+    "next": "14.2.5",
+    "next-pwa": "^5.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "unicode-match-property-value-ecmascript": "^2.2.1",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "mongodb-memory-server": "^9.2.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "wait-on": "^7.2.0"
+  }
+}

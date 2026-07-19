@@ -1,0 +1,19 @@
+# Drop your Android APK in this folder
+
+Place your built APK file (e.g. `quotex-1.0.0.apk`) directly in this folder.
+It will be served at `https://yourdomain.com/apk/quotex-1.0.0.apk` and the home
+page will automatically list it as a downloadable version.
+
+This folder is tracked in git (via this .gitkeep), so the APK persists across
+redeploys. To add a new version:
+
+  1. Build your APK
+  2. Copy the .apk file here
+  3. Commit + push to deploy
+
+  git add public/apk/quotex-1.0.0.apk
+  git commit -m "Add APK v1.0.0"
+  git push
+
+The home page at `/` detects the latest .apk by modification time and offers
+it as the primary download button.
